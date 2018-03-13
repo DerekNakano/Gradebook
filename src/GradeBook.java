@@ -6,20 +6,22 @@ public class GradeBook {
 
 	public static void main(String[] args) {
 		
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("Enter username:");
+		
+		String user = input.next();
+		
+		System.out.println("Enter password:");
+		
+		String password = input.next();
+		
 		
 			String connectionString = 
 					"jdbc:sqlserver://localhost:1433;"
 					+ "database=TestRun;"
-					+ "user=client1;"
-					+ "password=client117;";
-					/*
-					"jdbc:sqlserver://DEREKNSQLSERVER.database.windows.net:1433;"
-					+ "database=TestRun;"
-					+ "user=client1@DEREKNSQLSERVER;"
-					+ "password=client117;"
-					+ "encrypt=true;"
-					+ "trustServerCertificate=false;"
-					+ "hostNameInCertificate=*.database.windows.net";*/
+					+ "user=" + user + ";"
+					+ "password=" + password + ";";
 			
 			
 			Connection connection = null;
@@ -27,8 +29,6 @@ public class GradeBook {
 			try {
 				connection = DriverManager.getConnection(connectionString);
 				System.out.println("Connection successful!");
-				
-				Scanner input = new Scanner(System.in);
 				
 				//ArrayList<Student> students = new ArrayList<Student>();
 				
